@@ -18,9 +18,9 @@ const toggleHamburgerMenu = (): void => {
         @click:hamburger-menu="toggleHamburgerMenu"
       />
       <ul class="menu-items" :class="{ open: isOpenedHamburgerMenu }">
-        <li><a>calendar</a></li>
-        <li><a>chart</a></li>
-        <li><a>setting</a></li>
+        <li><router-link to="/">calendar</router-link></li>
+        <li><router-link to="/chart">chart</router-link></li>
+        <li><router-link to="/settings">settings</router-link></li>
       </ul>
     </nav>
   </div>
@@ -31,7 +31,7 @@ const toggleHamburgerMenu = (): void => {
 @import '../assets/style/_variables.sass'
 
 .nav-bar
-  position: fixed
+  // position: fixed
   width: 100%
   nav
     height: 3rem
@@ -42,22 +42,6 @@ const toggleHamburgerMenu = (): void => {
 
     .menu-items
       display: flex
-      li
-        font-size: 1.25rem
-        cursor: pointer
-        transition: all 0.3s ease-in-out
-        +breakpoint-up(large)
-          margin-left: 1.5rem
-          &:hover
-            opacity: 0.7
-            border-bottom: 5px solid $secondary
-            transition: all 0.3s ease-in-out
-
-      &.open
-        visibility: visible
-        opacity: 1
-        transform: translateX(0)
-
       +breakpoint-down(medium)
         position: absolute
         right: 0
@@ -70,8 +54,29 @@ const toggleHamburgerMenu = (): void => {
         opacity: 0
         transform: translateX(100%)
         transition: all 0.3s ease-in-out
-        li
+        &.open
+          visibility: visible
+          opacity: 1
+          transform: translateX(0)
+      li
+        font-size: 1.25rem
+        cursor: pointer
+        transition: all 0.3s ease-in-out
+        +breakpoint-up(large)
+          margin-left: 1.5rem
+          .router-link-exact-active,
+          &:hover
+            opacity: 0.7
+            border-bottom: 5px solid $secondary
+            transition: all 0.3s ease-in-out
+        +breakpoint-down(medium)
           margin-bottom: 1rem
           margin-left: .5rem
           cursor: pointer
+        a
+          color: $primary
+          +breakpoint-down(medium)
+            &.router-link-exact-active
+              font-weight: 700
+              color: $secondary
 </style>
