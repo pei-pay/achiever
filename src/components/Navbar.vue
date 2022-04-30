@@ -9,7 +9,7 @@ const toggleHamburgerMenu = (): void => {
 </script>
 
 <template>
-  <header class="nav-bar">
+  <div class="nav-bar">
     <nav>
       <!-- TODO: 達成したいことが入る -->
       <h1 class="title">Study English</h1>
@@ -23,14 +23,14 @@ const toggleHamburgerMenu = (): void => {
         <li><a>setting</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
 </template>
 
 <style lang="sass">
 @import '../assets/style/_mixins.sass'
 @import '../assets/style/_variables.sass'
 
-header.nav-bar
+.nav-bar
   position: fixed
   width: 100%
   nav
@@ -46,12 +46,12 @@ header.nav-bar
         font-size: 1.25rem
         cursor: pointer
         transition: all 0.3s ease-in-out
-        &:hover
-          opacity: 0.7
-          border-bottom: 5px solid $secondary
-          transition: all 0.3s ease-in-out
         +breakpoint-up(large)
           margin-left: 1.5rem
+          &:hover
+            opacity: 0.7
+            border-bottom: 5px solid $secondary
+            transition: all 0.3s ease-in-out
 
       &.open
         visibility: visible

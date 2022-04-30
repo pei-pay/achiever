@@ -1,7 +1,8 @@
 <script setup lang="ts">
-defineProps({
-  isOpened: Boolean
-})
+interface Props {
+  isOpened: boolean
+}
+defineProps<Props>()
 </script>
 
 <template>
