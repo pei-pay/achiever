@@ -64,17 +64,19 @@ const toggleHamburgerMenu = (): void => {
         transition: all 0.3s ease-in-out
         +breakpoint-up(large)
           margin-left: 1.5rem
-          .router-link-exact-active,
-          &:hover
-            opacity: 0.7
-            border-bottom: 5px solid $secondary
-            transition: all 0.3s ease-in-out
         +breakpoint-down(medium)
           margin-bottom: 1rem
           margin-left: .5rem
           cursor: pointer
         a
           color: $primary
+          +breakpoint-up(large)
+            padding-bottom: .875rem
+            &.router-link-exact-active,
+            &:hover
+              opacity: 0.7
+              border-bottom: 5px solid $secondary
+              transition: all 0.3s ease-in-out
           +breakpoint-down(medium)
             &.router-link-exact-active
               font-weight: 700

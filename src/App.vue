@@ -10,3 +10,5 @@ import Navbar from './components/Navbar.vue'
     <router-view></router-view>
   </main>
 </template>
+
+<style lang="sass"></style>
