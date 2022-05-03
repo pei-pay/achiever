@@ -1,18 +1,31 @@
+/*
+ * NOTE:
+ * volarのbug -> https://github.com/fullcalendar/fullcalendar-vue/issues/173
+ * -> 意味不
+ */
 {
   "compilerOptions": {
     "target": "esnext",
-    "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "lib": ["esnext", "dom"],
+    "esModuleInterop": true,
+    // "allowJs": true,
+    "sourceMap": true,
+    // "noEmit": true,
+    // "experimentalDecorators": true,
+    // "noUnusedLocals": true,
+    "useDefineForClassFields": true,
     "strict": true,
     "jsx": "preserve",
-    "sourceMap": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["vite/client", "node", "jest"]
   },
+  // "vueCompilerOptions": {
+  //   "experimentalCompatMode": 2
+  // },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

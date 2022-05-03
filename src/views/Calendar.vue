@@ -1,12 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import '@fullcalendar/core/vdom' // solves problem with Vite
 import FullCalendar from '@fullcalendar/vue3'
-import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin from '@fullcalendar/interaction'
-const calendarOptions = {
-  plugins: [dayGridPlugin, interactionPlugin],
-  initialView: 'dayGridMonth'
-}
+import { useFullCalendar } from '../useCases/fullCalendar'
+
+const { calendarOptions } = useFullCalendar()
 </script>
 
 <template>
