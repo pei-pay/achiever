@@ -5,7 +5,8 @@ import { CalendarOptions } from '@fullcalendar/vue3'
 export const useFullCalendar = () => {
   const calendarOptions = {
     plugins: [dayGridPlugin, interactionPlugin],
-    initialView: 'dayGridMonth'
+    initialView: 'dayGridMonth',
+    height: '100%'
   } as CalendarOptions
 
   return {

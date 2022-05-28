@@ -6,7 +6,7 @@ import Navbar from './components/Navbar.vue'
   <header>
     <Navbar />
   </header>
-  <main>
+  <main class="full-height">
     <router-view></router-view>
   </main>
 </template>

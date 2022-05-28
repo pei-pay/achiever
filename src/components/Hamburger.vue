@@ -16,9 +16,6 @@ defineProps<Props>()
 </template>
 
 <style lang="sass">
-@import '../assets/style/_mixins.sass'
-@import '../assets/style/_variables.sass'
-
 #hamburger
   .hamburger__icon
     position: relative

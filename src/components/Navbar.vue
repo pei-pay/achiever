@@ -31,7 +31,7 @@ const toggleHamburgerMenu = (): void => {
 @import '../assets/style/_variables.sass'
 
 .nav-bar
-  // position: fixed
+  position: fixed
   width: 100%
   nav
     height: 3rem
@@ -39,6 +39,12 @@ const toggleHamburgerMenu = (): void => {
     justify-content: space-between
     color: $primary
     padding: 1.5rem
+
+    h1.title
+      font-size: 1.7rem
+      // background-color:  $secondary
+      border-top: 5px solid $secondary
+      border-bottom: 5px solid $secondary
 
     .menu-items
       display: flex
